@@ -349,10 +349,14 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .ours-notes h3 { font-size: 22px; margin-bottom: 14px; }
 .ours-notes p { font-size: 17px; }
+/* White panel so the Orange branded phrase never sits on Light Grey */
 .relationship {
+  background: var(--white);
   border-left: 3px solid var(--navy);
-  padding-left: 28px;
+  padding: 28px 30px;
+  align-self: start;
 }
+.ours-notes .brand-phrase--inline { font-size: 24px; margin-bottom: 2px; }
 .relationship strong { color: var(--navy); }
 
 /* Ways to start */
