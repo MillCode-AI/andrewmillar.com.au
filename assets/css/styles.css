@@ -310,7 +310,11 @@ a:hover { text-decoration-thickness: 2px; }
 .method__step p { font-size: 17px; }
 
 /* OURS */
-.ours h2 { max-width: none; }
+.ours h2,
+#ways h2,
+#ways .section__intro,
+#why h2,
+#contact h2 { max-width: none; }
 .ours__sub { max-width: 680px; margin-top: 18px; font-size: 19px; }
 .ours-grid {
   display: grid;
@@ -416,10 +420,21 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .contact__offer h3 { font-size: 22px; margin-bottom: 10px; }
 .contact__actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   margin-top: 40px;
+}
+.contact__actions .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 16px;
+  border-radius: 6px;
+}
+@media (max-width: 980px) {
+  .contact__actions { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Footer */
@@ -498,7 +513,7 @@ a:hover { text-decoration-thickness: 2px; }
   .method { gap: 36px; }
   .ways li { grid-template-columns: 1fr; gap: 8px; }
   .about__inner { grid-template-columns: 1fr; gap: 32px; }
-  .contact__actions .button { flex: 1 1 100%; text-align: center; }
+  .contact__actions { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 420px) {
