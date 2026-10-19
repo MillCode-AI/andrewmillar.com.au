@@ -310,6 +310,7 @@ a:hover { text-decoration-thickness: 2px; }
 .method__step p { font-size: 17px; }
 
 /* OURS */
+.ours h2 { max-width: none; }
 .ours__sub { max-width: 680px; margin-top: 18px; font-size: 19px; }
 .ours-grid {
   display: grid;
