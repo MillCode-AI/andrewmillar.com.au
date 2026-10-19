@@ -415,7 +415,6 @@ a:hover { text-decoration-thickness: 2px; }
 /* Contact */
 .contact { border-top: 1px solid var(--rule); }
 .contact__offer {
-  max-width: 640px;
   margin-top: 26px;
 }
 .contact__offer h3 { font-size: 22px; margin-bottom: 10px; }
