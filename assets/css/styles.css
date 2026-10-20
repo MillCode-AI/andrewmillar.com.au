@@ -41,6 +41,7 @@ h1, h2, h3 {
   font-weight: 700;
   color: var(--navy);
   line-height: 1.2;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
@@ -192,31 +193,37 @@ a:hover { text-decoration-thickness: 2px; }
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--navy);
 }
 .section-label::before {
   content: "";
-  width: 22px;
-  height: 3px;
+  width: 18px;
+  height: 2px;
   background: var(--orange);
   flex-shrink: 0;
 }
 
 .section { padding: var(--section-space) 0; }
 .section--grey { background: var(--grey); }
-.section h2 { font-size: clamp(30px, 4vw, 40px); text-wrap: balance; }
+.section h2 {
+  font-size: clamp(28px, 3.2vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
 .section p { text-wrap: pretty; }
 /* Sentence breaks used on wider screens only */
 @media (max-width: 720px) { .br-wide { display: none; } }
 .section__intro { margin-top: 22px; font-size: 19px; }
 
-/* Branded phrase: AMC Orange, large text, White surfaces only */
+/* Branded phrase: AMC Orange, large text, on White or Navy surfaces only */
 .brand-phrase {
   font-family: var(--serif);
   font-weight: 700;
@@ -227,11 +234,17 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 /* Hero */
-.hero { padding: 128px 0 120px; }
+.hero {
+  padding: 128px 0 120px;
+  background: var(--navy);
+  color: var(--white);
+}
 .hero h1 {
-  font-size: clamp(40px, 6.2vw, 68px);
+  font-size: clamp(40px, 5.6vw, 62px);
   max-width: 15ch;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--white);
 }
 .hero__lead {
   max-width: 600px;
@@ -241,6 +254,10 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .hero .brand-phrase { margin-top: 40px; }
 .hero .button { margin-top: 44px; }
+
+/* On Navy surfaces the Navy button keeps a White outline so it stays visible */
+.hero .button,
+.contact .button { border-color: var(--white); }
 
 /* Problem list */
 .problem-list {
@@ -489,7 +506,13 @@ a:hover { text-decoration-thickness: 2px; }
 .about__text { max-width: 640px; }
 
 /* Contact */
-.contact { border-top: 1px solid var(--rule); }
+.contact {
+  background: var(--navy);
+  color: var(--white);
+}
+.contact h2,
+.contact h3,
+.contact .section-label { color: var(--white); }
 .contact__offer {
   margin-top: 26px;
 }
@@ -514,6 +537,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* Footer */
 .site-footer {
   background: var(--navy);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--white);
   padding: 64px 0 40px;
   font-size: 15px;
