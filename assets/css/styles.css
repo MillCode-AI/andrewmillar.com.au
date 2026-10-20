@@ -268,10 +268,36 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--navy);
 }
 
+/* Find yourself by role */
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.role {
+  background: var(--grey);
+  border-top: 3px solid var(--navy);
+  padding: 26px 26px 28px;
+}
+.role h3 {
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.role p {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--navy);
+}
+
 /* Improvement areas */
 .areas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 48px 64px;
   margin-top: 64px;
 }
@@ -310,7 +336,56 @@ a:hover { text-decoration-thickness: 2px; }
 .method__step h3 { font-size: 24px; margin-bottom: 12px; }
 .method__step p { font-size: 17px; }
 
+/* Measure of success */
+.success {
+  margin-top: 64px;
+  border-left: 3px solid var(--orange);
+  padding-left: 28px;
+}
+.success h3 { font-size: 22px; margin-bottom: 10px; }
+.success p {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
 /* OURS */
+/* AI recognition scenes: Orange used only as non-text markers on Light Grey */
+.ai-scenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 56px;
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+}
+.ai-scenes li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 17px;
+}
+.ai-scenes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 12px;
+  height: 3px;
+  background: var(--orange);
+}
+.ai-close {
+  margin-top: 32px;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--navy);
+}
+.ai-close + .ours__sub {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid #D6D8DC;
+}
 .ours__sub { margin-top: 18px; font-size: 19px; }
 .ours-grid {
   display: grid;
@@ -376,6 +451,11 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .ways h3 { font-size: 21px; }
 .ways p { font-size: 17px; }
+.ways .ways__outcome {
+  margin-top: 10px;
+  font-size: 16px;
+}
+.ways__outcome strong { color: var(--navy); }
 
 /* Why AMC */
 .why-grid {
@@ -486,6 +566,7 @@ a:hover { text-decoration-thickness: 2px; }
   .ours-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .ours-notes { grid-template-columns: 1fr; gap: 40px; }
+  .roles { grid-template-columns: 1fr; gap: 16px; }
   .about__inner { grid-template-columns: 240px 1fr; gap: 48px; }
 }
 
@@ -503,6 +584,7 @@ a:hover { text-decoration-thickness: 2px; }
   .method,
   .ours-grid,
   .why-grid,
+  .ai-scenes,
   .footer__grid { grid-template-columns: 1fr; }
   .method { gap: 36px; }
   .ways li { grid-template-columns: 1fr; gap: 8px; }
